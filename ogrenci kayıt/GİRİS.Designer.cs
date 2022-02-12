@@ -164,6 +164,7 @@ namespace ogrenci_kayıt
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormOgrenci";
             this.Text = "ÖĞRENCİ GİRİŞ";
+            this.Load += new System.EventHandler(this.FormOgrenci_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

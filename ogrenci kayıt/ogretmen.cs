@@ -44,13 +44,20 @@ namespace ogrenci_kayıt
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            int sayac = dataGridView1.Rows.Count -1;
             baglantı.Open();
             SqlCommand komut = new SqlCommand("insert into ogrenciler (OGRID,OGRNUMARA,OGRAD,OGRSOYAD) values(@p,@p1,@p2,@p3)", baglantı);
             komut.Parameters.AddWithValue("@p1", maskedTextBox1.Text);
             komut.Parameters.AddWithValue("@p2", textname.Text);
             komut.Parameters.AddWithValue("@p3", textsur.Text);
-            komut.Parameters.AddWithValue("@p",11);
+            if (dataGridView1.RowCount != 40)
+            {
+                sayac++;
+                komut.Parameters.AddWithValue("@p",sayac);
+
+
+            }
+            //komut.Parameters.AddWithValue("@p",11);
             komut.ExecuteNonQuery();
             baglantı.Close();
             MessageBox.Show("öğrenci sisteme eklendi");

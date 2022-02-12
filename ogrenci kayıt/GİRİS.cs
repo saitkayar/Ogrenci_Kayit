@@ -38,5 +38,10 @@ namespace ogrenci_kayıt
             frm.numara = maskedTextBox1.Text;
             frm.Show();
         }
+
+        private void FormOgrenci_Load(object sender, EventArgs e)
+        {
+            ////// öğretmen ID=1234
+        }
     }
 }

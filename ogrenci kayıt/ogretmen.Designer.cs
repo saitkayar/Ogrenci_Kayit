@@ -31,6 +31,7 @@ namespace ogrenci_kayıt
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnsil = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textsur = new System.Windows.Forms.TextBox();
@@ -43,16 +44,18 @@ namespace ogrenci_kayıt
             this.texts3 = new System.Windows.Forms.TextBox();
             this.texts2 = new System.Windows.Forms.TextBox();
             this.texts1 = new System.Windows.Forms.TextBox();
+            this.lblortalama = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbldurum = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.lblortalama = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.oGRIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,9 +70,6 @@ namespace ogrenci_kayıt
             this.ogrencilerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.notkayıtDataSet = new ogrenci_kayıt.notkayıtDataSet();
             this.ogrencilerTableAdapter = new ogrenci_kayıt.notkayıtDataSetTableAdapters.ogrencilerTableAdapter();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnsil = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -95,6 +95,19 @@ namespace ogrenci_kayıt
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Öğrenci EKle";
+            // 
+            // btnsil
+            // 
+            this.btnsil.BackColor = System.Drawing.Color.Crimson;
+            this.btnsil.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnsil.Location = new System.Drawing.Point(124, 156);
+            this.btnsil.Name = "btnsil";
+            this.btnsil.Size = new System.Drawing.Size(75, 36);
+            this.btnsil.TabIndex = 7;
+            this.btnsil.Text = "KAYIT SİL";
+            this.btnsil.UseVisualStyleBackColor = false;
+            this.btnsil.Visible = false;
+            this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
             // button1
             // 
@@ -213,6 +226,17 @@ namespace ogrenci_kayıt
             this.texts1.Size = new System.Drawing.Size(100, 20);
             this.texts1.TabIndex = 6;
             // 
+            // lblortalama
+            // 
+            this.lblortalama.AutoSize = true;
+            this.lblortalama.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblortalama.Location = new System.Drawing.Point(123, 121);
+            this.lblortalama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblortalama.Name = "lblortalama";
+            this.lblortalama.Size = new System.Drawing.Size(28, 18);
+            this.lblortalama.TabIndex = 15;
+            this.lblortalama.Text = "00";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -224,6 +248,18 @@ namespace ogrenci_kayıt
             this.label6.Size = new System.Drawing.Size(69, 18);
             this.label6.TabIndex = 5;
             this.label6.Text = "Sınav 3 :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(6, 121);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(84, 18);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Ortalama :";
             // 
             // label5
             // 
@@ -264,11 +300,33 @@ namespace ogrenci_kayıt
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DURUM";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(193, 58);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(28, 18);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "00";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Location = new System.Drawing.Point(7, 58);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(178, 18);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "SINIF  ORTALAMASI :";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(193, 122);
+            this.label8.Location = new System.Drawing.Point(193, 126);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(28, 18);
@@ -279,7 +337,7 @@ namespace ogrenci_kayıt
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(193, 85);
+            this.label7.Location = new System.Drawing.Point(193, 88);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 18);
@@ -307,29 +365,6 @@ namespace ogrenci_kayıt
             this.label13.Size = new System.Drawing.Size(129, 18);
             this.label13.TabIndex = 16;
             this.label13.Text = "GEÇEN SAYISI :";
-            // 
-            // lblortalama
-            // 
-            this.lblortalama.AutoSize = true;
-            this.lblortalama.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblortalama.Location = new System.Drawing.Point(123, 121);
-            this.lblortalama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblortalama.Name = "lblortalama";
-            this.lblortalama.Size = new System.Drawing.Size(28, 18);
-            this.lblortalama.TabIndex = 15;
-            this.lblortalama.Text = "00";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(6, 121);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 18);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Ortalama :";
             // 
             // groupBox4
             // 
@@ -431,41 +466,6 @@ namespace ogrenci_kayıt
             // ogrencilerTableAdapter
             // 
             this.ogrencilerTableAdapter.ClearBeforeFill = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(7, 58);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(178, 18);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "SINIF  ORTALAMASI :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(193, 55);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 18);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "00";
-            // 
-            // btnsil
-            // 
-            this.btnsil.BackColor = System.Drawing.Color.Crimson;
-            this.btnsil.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnsil.Location = new System.Drawing.Point(124, 156);
-            this.btnsil.Name = "btnsil";
-            this.btnsil.Size = new System.Drawing.Size(75, 36);
-            this.btnsil.TabIndex = 7;
-            this.btnsil.Text = "KAYIT SİL";
-            this.btnsil.UseVisualStyleBackColor = false;
-            this.btnsil.Visible = false;
-            this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
             // ogretmen
             // 

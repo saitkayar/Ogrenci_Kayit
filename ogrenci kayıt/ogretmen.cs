@@ -116,6 +116,23 @@ namespace ogrenci_kayıt
             baglantı.Close();
 
             MessageBox.Show("öğrenci güncellendi");
+
+            ////////////////////////////////////////
+             double ort = 0;
+            SqlCommand komutt = new SqlCommand("select COUNT( *) from ogrenciler where DURUM='True' ", baglantı);
+            SqlCommand komut2 = new SqlCommand("select COUNT( *) from ogrenciler where DURUM='False' ", baglantı);
+            SqlCommand komut3 = new SqlCommand("select AVG(ORTALAMA) from ogrenciler ", baglantı);
+            baglantı.Open();
+
+            label7.Text = komutt.ExecuteScalar().ToString();
+
+            label8.Text = komut2.ExecuteScalar().ToString();
+            label10.Text = komut3.ExecuteScalar().ToString();
+            ort = Convert.ToDouble(label10.Text);
+            ort = Math.Round(ort, 1);
+            label10.Text = ort.ToString();
+            baglantı.Close();
+//////////////////////////////
             this.ogrencilerTableAdapter.Fill(this.notkayıtDataSet.ogrenciler);
 
         }
